@@ -79,19 +79,8 @@ const Quiz: React.FC<QuizProps> = ({ onQuizComplete }) => {
     const finalResult = calculateResult();
 
     try {
-      // --- SIMULATED SUBMISSION FOR PREVIEW ---
-      // The code block for the real API call is commented out below.
-      // In this preview environment, we simulate a successful submission 
-      // after a 1-second delay to show the loading state.
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      onQuizComplete(finalResult);
-      // --- END OF SIMULATION ---
-
-
-      /* 
       // --- PRODUCTION CODE ---
-      // This is the real code your developer will use when deploying the site.
-      // It sends the data to your backend serverless function.
+      // This sends the data to your backend serverless function.
       const response = await fetch('/brevo-api/subscribe', {
         method: 'POST',
         headers: {
@@ -118,7 +107,6 @@ const Quiz: React.FC<QuizProps> = ({ onQuizComplete }) => {
 
       // If submission is successful, proceed to the results page
       onQuizComplete(finalResult);
-      */
 
     } catch (error) {
         if (error instanceof Error) {
