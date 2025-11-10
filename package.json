@@ -1,6 +1,7 @@
 {
   "name": "reset-method-quiz",
   "version": "1.0.0",
+  "type": "module",
   "description": "An interactive quiz for The R.E.S.E.T Method™.",
   "main": "api/subscribe.js",
   "dependencies": {

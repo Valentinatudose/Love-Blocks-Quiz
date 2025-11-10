@@ -1,11 +1,9 @@
 // api/subscribe.js
-// This file acts as a serverless function or API endpoint.
-// It should be deployed in an environment that supports Node.js (e.g., Vercel, Netlify, or a traditional server).
-
-const SibApiV3Sdk = require('@getbrevo/brevo');
+// This file acts as a serverless function or API endpoint using ES Module syntax.
+import SibApiV3Sdk from '@getbrevo/brevo';
 
 // This function will be exported and used by the server environment.
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   // 1. Log the start of the function and the request method
   console.log(`Function invoked. Method: ${req.method}`);
 
@@ -73,4 +71,4 @@ module.exports = async (req, res) => {
     const errorMessage = error.body?.message || 'An error occurred while subscribing. Please try again.';
     res.status(500).json({ error: errorMessage });
   }
-};
+}

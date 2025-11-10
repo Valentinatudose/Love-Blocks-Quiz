@@ -42,7 +42,7 @@ Your task is to deploy this function so it's accessible at the URL `/api/subscri
 
 ### Backend Function Logic (`api/subscribe.js`):
 
-The function is already written to:
+The project is configured as an **ES Module**, which is the modern standard for JavaScript. The function is already written to:
 -   **Accept** a `POST` request with a JSON payload:
     ```json
     {
