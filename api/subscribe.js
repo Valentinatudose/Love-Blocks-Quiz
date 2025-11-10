@@ -21,19 +21,17 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         email: email,
-        listIds: [1], // Replace with your actual list ID
+        listIds: [YOUR_ACTUAL_LIST_ID_HERE], // ← REPLACE THIS
         updateEnabled: true
       })
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      return res.status(response.status).json({ 
-        error: errorData.message || 'Subscription failed' 
-      });
+    if (response.ok) {
+      res.status(200).json({ success: true });
+    } else {
+      const error = await response.json();
+      res.status(400).json({ error: error.message || 'Subscription failed' });
     }
-
-    res.status(200).json({ success: true });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
