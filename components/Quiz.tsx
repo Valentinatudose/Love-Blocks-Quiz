@@ -81,7 +81,7 @@ const Quiz: React.FC<QuizProps> = ({ onQuizComplete }) => {
     try {
       // --- PRODUCTION CODE ---
       // This sends the data to your backend serverless function.
-      const response = await fetch('/brevo-api/subscribe', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

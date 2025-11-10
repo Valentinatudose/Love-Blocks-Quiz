@@ -10,7 +10,7 @@ This quiz is built as a self-contained frontend application. To add it to your w
 
 1.  **Upload Frontend Files**: Copy all the frontend project files and folders (`index.html`, `index.tsx`, `App.tsx`, `constants.ts`, `types.ts`, `metadata.json`, and the `components` folder) into a new directory on your web server (e.g., `/quiz`).
 
-2.  **Deploy the Backend Function**: You must also deploy the backend function located in the `brevo-api` folder. See the instructions in Section 2.
+2.  **Deploy the Backend Function**: You must also deploy the backend function located in the `api` folder. See the instructions in Section 2.
 
 3.  **Access the Quiz**: Once both parts are deployed, you should be able to access the quiz by navigating to `https://yourwebsite.com/quiz/index.html`.
 
@@ -22,9 +22,9 @@ To capture leads and add them to the correct Brevo list, you need to deploy the 
 
 ### Backend Developer's Task:
 
-Your project now contains a `brevo-api` folder. The file `brevo-api/subscribe.js` is a **serverless function** designed to be deployed on a platform like Vercel, Netlify, or your own Node.js server.
+Your project now contains an `api` folder. The file `api/subscribe.js` is a **serverless function** designed to be deployed on a platform like Vercel, Netlify, or your own Node.js server.
 
-Your task is to deploy this function so it's accessible at the URL `/brevo-api/subscribe`.
+Your task is to deploy this function so it's accessible at the URL `/api/subscribe`.
 
 ### Step-by-Step Deployment Guide:
 
@@ -35,10 +35,10 @@ Your task is to deploy this function so it's accessible at the URL `/brevo-api/s
     *   The code `process.env.BREVO_API_KEY` will automatically and securely read this value on the server.
 
 3.  **Deployment & Routing**:
-    *   **On Vercel/Netlify**: These platforms will automatically detect the `brevo-api` folder. They will build and deploy the `subscribe.js` file as a serverless function, making it available at the correct URL (`/brevo-api/subscribe`) without extra configuration.
-    *   **On a Custom Server (e.g., Express)**: You would need to set up a route that listens for `POST` requests to `/brevo-api/subscribe` and executes the logic from the `subscribe.js` file.
+    *   **On Vercel/Netlify**: These platforms will automatically detect the `api` folder. They will build and deploy the `subscribe.js` file as a serverless function, making it available at the correct URL (`/api/subscribe`) without extra configuration.
+    *   **On a Custom Server (e.g., Express)**: You would need to set up a route that listens for `POST` requests to `/api/subscribe` and executes the logic from the `subscribe.js` file.
 
-### Backend Function Logic (`brevo-api/subscribe.js`):
+### Backend Function Logic (`api/subscribe.js`):
 
 The function is already written to:
 -   **Accept** a `POST` request with a JSON payload:
