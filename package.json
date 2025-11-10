@@ -5,7 +5,7 @@
   "description": "An interactive quiz for The R.E.S.E.T Method™.",
   "main": "api/subscribe.js",
   "dependencies": {
-    "@getbrevo/brevo": "^2.2.0"
+    "node-fetch": "^3.3.0"
   },
   "scripts": {
     "start": "echo \"No start script defined\""
